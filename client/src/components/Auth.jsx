@@ -28,7 +28,7 @@ const Auth = () => {
         
         const { userName, password, phoneNumber, avatarURL } = form;
         
-        const URL = "http:://localhost:5000/auth";
+        const URL = 'http://localhost:5000/auth';
 
         const { data: {token, userId, hashedPassword, fullName}} = await axios.post(`${URL}/${isSignup ? 'signup': 'login'}`, {
             userName, password, fullName: form.fullName, phoneNumber, avatarURL,
@@ -51,6 +51,7 @@ const Auth = () => {
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
     }
+
 
   return (
     <div className='auth__form-container'>
